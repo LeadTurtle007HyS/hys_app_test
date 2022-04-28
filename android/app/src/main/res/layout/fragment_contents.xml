@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="com.sparrowrms.hyspro.ui.fragment.HighlyRelatedBooksFragment">
+
+
+    <TextView
+        android:id="@+id/highlyRatedBookTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:text="Highly Rated Books"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:padding="@dimen/margin_small"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:padding="@dimen/margin_small"
+        android:layout_below="@+id/highlyRatedBookTitle"
+        android:id="@+id/recycler_view_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="23sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/progressBarLoader"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_background_outgoing_screen"
+    android:gravity="center_horizontal"
+    style="@style/MatchParent"
+    android:orientation="vertical">
+
+    <View
+        style="@style/WeightWidth"
+        android:layout_height="0dp" />
+
+    <ImageView
+        android:id="@+id/image_calling_avatar"
+        style="@style/CallerAvatar" />
+
+    <TextView
+        android:id="@+id/text_outgoing_opponents_names"
+        style="@style/MatchWidth"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/margin_small"
+        android:paddingLeft="@dimen/padding_outgoing_screen"
+        android:paddingRight="@dimen/padding_outgoing_screen"
+        android:textSize="@dimen/text_size_call"
+        android:textStyle="normal"
+        tools:text="John, Bob, Merlin" />
+
+    <TextView
+        android:id="@+id/text_ringing"
+        style="@style/MatchWidth"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_weight="3"
+        android:gravity="center_horizontal"
+        android:text="Calling"
+        android:textSize="16sp"
+        android:textStyle="normal" />
+</LinearLayout>

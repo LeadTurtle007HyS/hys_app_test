@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.WhiteboardScreen">
+
+    <LinearLayout
+        android:id="@+id/toolButtons"
+        android:layout_width="wrap_content"
+        android:padding="@dimen/grid_item_divider"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/eraser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:src="@drawable/eraser"
+            android:scaleType="fitCenter"
+            android:onClick="eraser" />
+
+        <ImageButton
+            android:id="@+id/selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:src="@drawable/selector"
+            android:scaleType="fitCenter"
+            android:onClick="selector" />
+        <ImageButton
+            android:id="@+id/textArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:src="@drawable/text"
+            android:scaleType="fitCenter"
+            android:onClick="textArea" />
+        <ImageButton
+            android:id="@+id/pencil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:src="@drawable/pencil"
+            android:scaleType="fitCenter"
+            android:onClick="pencil" />
+
+
+    </LinearLayout>
+
+    <com.herewhite.sdk.WhiteboardView
+        android:id="@+id/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_toEndOf="@+id/toolButtons"/>
+
+    <ProgressBar
+        android:id="@+id/whiteBoardProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

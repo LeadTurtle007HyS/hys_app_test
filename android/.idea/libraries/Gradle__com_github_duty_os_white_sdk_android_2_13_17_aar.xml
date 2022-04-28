@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.duty-os:white-sdk-android:2.13.17@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1fb8e70ea6bcb80bc3a69198330d0a3/jetified-white-sdk-android-2.13.17/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1fb8e70ea6bcb80bc3a69198330d0a3/jetified-white-sdk-android-2.13.17/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b1fb8e70ea6bcb80bc3a69198330d0a3/jetified-white-sdk-android-2.13.17/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.duty-os/white-sdk-android/2.13.17/257e22f2ce7b898563057470b3f74bc8b971787a/white-sdk-android-2.13.17-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.duty-os/white-sdk-android/2.13.17/676a7ec77a06ba32449c2dfd8424fbf82b635e18/white-sdk-android-2.13.17-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

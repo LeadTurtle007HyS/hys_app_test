@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/highlight_yellow">
+
+            <LinearLayout
+                android:id="@+id/firstSectionLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/copySelection"
+                    style="@style/TextViewTextSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/copy" />
+
+                <TextView
+                    android:id="@+id/shareSelection"
+                    style="@style/TextViewTextSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/share" />
+
+                <TextView
+                    android:id="@+id/defineSelection"
+                    style="@style/TextViewTextSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/define" />
+                <TextView
+                    android:id="@+id/audioCall"
+                    style="@style/TextViewTextSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/call_id" />
+
+
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/firstHorizontalDivider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#BBB"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstSectionLayout" />
+
+            <LinearLayout
+                android:id="@+id/difficultyTypeButtonContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/firstHorizontalDivider"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/toughNessLevel"
+                    style="@style/TextViewTextSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:text="@string/toughness" />
+
+                <TextView
+                    android:id="@+id/examLikeHood"
+                    style="@style/TextViewTextSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    android:text="@string/exam_like_hood" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/secondHorizontalDivider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#BBB"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/difficultyTypeButtonContainer" />
+
+            <LinearLayout
+                android:id="@+id/highlyRatedBooksContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/secondHorizontalDivider"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/highlyRatedBooks"
+                    style="@style/TextViewTextSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="@string/highly_rated_books_on_this_section" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/predictConceptContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/secondHorizontalDivider"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/predictConceptButton"
+                    style="@style/TextViewTextSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="@string/predict_related_concept" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/thirdHorizontalDivider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#BBB"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/highlyRatedBooksContainer" />
+
+
+            <LinearLayout
+                android:id="@+id/relatedQuestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/thirdHorizontalDivider"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/relatedQuestionButton"
+                    style="@style/TextViewTextSelector"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="@string/see_related_questions_in_competition" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/fourthHorizontalDivider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#BBB"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/relatedQuestions" />
+
+
+            <HorizontalScrollView
+                android:id="@+id/highlightScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fourthHorizontalDivider">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/deleteHighlight"
+                        style="@style/ImageViewTextSelectorMarker"
+                        app:srcCompat="@drawable/ic_highlight_delete" />
+
+
+
+                    <ImageView
+                        android:id="@+id/yellowHighlight"
+                        style="@style/ImageViewTextSelectorMarker"
+                        android:src="@drawable/shape_highlight_yellow" />
+
+                    <ImageView
+                        android:id="@+id/greenHighlight"
+                        style="@style/ImageViewTextSelectorMarker"
+                        android:src="@drawable/shape_highlight_green" />
+
+                    <ImageView
+                        android:id="@+id/blueHighlight"
+                        style="@style/ImageViewTextSelectorMarker"
+                        android:src="@drawable/shape_highlight_blue" />
+
+                    <ImageView
+                        android:id="@+id/pinkHighlight"
+                        style="@style/ImageViewTextSelectorMarker"
+                        android:src="@drawable/shape_highlight_pink" />
+
+                    <ImageView
+                        android:id="@+id/underlineHighlight"
+                        style="@style/ImageViewTextSelectorMarker"
+                        app:srcCompat="@drawable/ic_format_underlined" />
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

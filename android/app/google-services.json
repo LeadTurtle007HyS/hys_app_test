@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "728627807478",
+    "firebase_url": "https://hys-pro-41c66-default-rtdb.firebaseio.com",
+    "project_id": "hys-pro-41c66",
+    "storage_bucket": "hys-pro-41c66.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:728627807478:android:1c705d6b521c559c0658d7",
+        "android_client_info": {
+          "package_name": "com.sparrowrms.hyspro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "728627807478-8vj4plus41vjgdq0ijkr2e6rn5ks2egn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sparrowrms.hyspro",
+            "certificate_hash": "f50d9fb4584bbd48c4c425fa9102f3463e3f8403"
+          }
+        },
+        {
+          "client_id": "728627807478-nd12j38js78upsvojb2p5hh22uke1s42.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3xniLh7hNsB20df4SH0318AoSIBHidls"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "728627807478-nd12j38js78upsvojb2p5hh22uke1s42.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

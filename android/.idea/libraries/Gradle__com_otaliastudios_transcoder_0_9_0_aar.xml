@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.otaliastudios:transcoder:0.9.0@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/79f3a22247383a715c91476530b379b6/jetified-transcoder-0.9.0/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/79f3a22247383a715c91476530b379b6/jetified-transcoder-0.9.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/79f3a22247383a715c91476530b379b6/jetified-transcoder-0.9.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/79f3a22247383a715c91476530b379b6/jetified-transcoder-0.9.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.otaliastudios/transcoder/0.9.0/99399e0fede666df8376ec115862d449828045d6/transcoder-0.9.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.otaliastudios/transcoder/0.9.0/5f40681bfc0d402f4da150f034b685a8807011f8/transcoder-0.9.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,204 @@
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
+
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
+}
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+ 
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+          pickFirst 'META-INF/atomicfu.kotlin_module'
+          pickFirst 'META-INF/proguard/coroutines.pro'
+          pickFirst 'lib/arm64-v8a/libc++_shared.so'
+          pickFirst 'lib/x86/libc++_shared.so'
+          pickFirst 'lib/x86_64/libc++_shared.so'
+          pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+          pickFirst 'lib/armeabi/libc++_shared.so'
+          exclude 'META-INF/LICENSE.txt'
+          exclude 'META-INF/NOTICE.txt'
+          exclude 'META-INF/LICENSE'
+          exclude 'META-INF/NOTICE'
+      }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    
+
+    defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.sparrowrms.hyspro"
+        minSdkVersion 24
+        targetSdkVersion 31
+        manifestPlaceholders = [pdftronLicenseKey:PDFTRON_LICENSE_KEY]
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        
+        
+    }
+
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            useProguard true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceCompatibility = '1.8'
+
+    dataBinding.enabled = true
+
+    splits {
+        // Configures multiple APKs based on ABI.
+        abi {
+            // Enables building multiple APKs per ABI.
+            enable true
+
+            // By default all ABIs are included, so use reset() and include to specify that we only
+            // want APKs for x86, armeabi-v7a, and mips.
+            reset()
+
+            // Specifies a list of ABIs that Gradle should create APKs for.
+            include "x86", "x86_64", "armeabi-v7a", "arm64-v8a"
+
+            // Specifies that we want to also generate a universal APK that includes all ABIs.
+            universalApk true
+        }
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.google.firebase:firebase-messaging:21.0.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    def multidex_version = "2.0.1"
+    implementation "androidx.multidex:multidex:$multidex_version"
+    implementation project(':ucrop')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:$versions.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
+    implementation "com.google.android.material:material:$versions.material"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-database:19.2.1'
+    testImplementation 'junit:junit:4.12'
+    implementation 'org.slf4j:slf4j-android:1.7.25'
+    implementation 'com.daimajia.swipelayout:library:1.2.0@aar'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation "com.fasterxml.jackson.core:jackson-core:$versions.jackson"
+    implementation "com.fasterxml.jackson.core:jackson-annotations:$versions.jackson"
+    implementation "com.fasterxml.jackson.core:jackson-databind:$versions.jackson"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:$versions.jackson"
+    implementation "com.google.code.gson:gson:$versions.gson"
+
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-jackson:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+
+    // R2 modules
+    api("com.github.codetoart:r2-shared-kotlin:$versions.r2SharedKotlin") {
+        changing = true
+    }
+    api("com.github.codetoart:r2-streamer-kotlin:$versions.r2StreamerKotlin") {
+        exclude group: "org.slf4j", module: "slf4j-api"
+        changing = true
+    }
+
+    // Only ReflectionUtils in Spring framework is used
+    implementation 'org.springframework:spring-core:4.3.19.RELEASE'
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+
+    implementation 'com.squareup.okhttp3:okhttp:4.8.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.19'
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+
+    //Firebase
+    def firebase_auth = "19.2.0"
+    def firebase_firestore = "21.3.1"
+    def firebase_storage = "19.1.0"
+    def firebase_ui = "6.2.0"
+    implementation platform('com.google.firebase:firebase-bom:28.2.1')
+    implementation "com.google.firebase:firebase-auth:$firebase_auth"
+    implementation "com.google.firebase:firebase-firestore:$firebase_firestore"
+    implementation "com.firebaseui:firebase-ui-firestore:$firebase_ui"
+    implementation "com.google.firebase:firebase-storage:$firebase_storage"
+
+    implementation 'com.google.firebase:firebase-messaging:22.0.0'
+
+    def circularImage_version = "3.0.1"
+    implementation "de.hdodenhof:circleimageview:$circularImage_version"
+
+
+    //Glide
+    def glide_version = "4.10.0"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+
+    // agora
+    // implementation 'io.agora.rtc:voice-sdk:3.5.0'
+  //  implementation 'io.agora.rtc:full-sdk:3.5.0'
+
+    implementation 'com.yanzhenjie:permission:2.0.3'
+
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+
+    implementation 'com.github.duty-os:white-sdk-android:2.13.17'
+
+}
+apply plugin: 'com.google.gms.google-services'
